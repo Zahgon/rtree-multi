@@ -10,9 +10,8 @@ public interface Entry<T, S extends Geometry> extends HasGeometry {
 
     @Override
     S geometry();
-    
-    public static <T, S extends Geometry> Entry<T,S> entry(T object, S geometry) {
-        return EntryDefault.entry(object, geometry);
-    }
 
+    public static <T, S extends Geometry> Entry<T, S> entry(T object, S geometry) {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

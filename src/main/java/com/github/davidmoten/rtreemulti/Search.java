@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
-
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 
 final class Search {
@@ -14,14 +13,14 @@ final class Search {
         // prevent instantiation
     }
 
-    static <T, S extends Geometry> Iterable<Entry<T, S>> search(Node<T, S> node,
-            Predicate<? super Geometry> condition) {
-        return new SearchIterable<T, S>(node, condition);
+    static <T, S extends Geometry> Iterable<Entry<T, S>> search(Node<T, S> node, Predicate<? super Geometry> condition) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static final class SearchIterable<T, S extends Geometry> implements Iterable<Entry<T, S>> {
 
         private final Node<T, S> node;
+
         private final Predicate<? super Geometry> condition;
 
         SearchIterable(Node<T, S> node, Predicate<? super Geometry> condition) {
@@ -31,15 +30,16 @@ final class Search {
 
         @Override
         public Iterator<Entry<T, S>> iterator() {
-            return new SearchIterator<T, S>(node, condition);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
-
     }
 
     static final class SearchIterator<T, S extends Geometry> implements Iterator<Entry<T, S>> {
 
         private final Predicate<? super Geometry> condition;
+
         private final Deque<NodePosition<T, S>> stack;
+
         private Entry<T, S> next;
 
         SearchIterator(Node<T, S> node, Predicate<? super Geometry> condition) {
@@ -50,20 +50,12 @@ final class Search {
 
         @Override
         public boolean hasNext() {
-            load();
-            return next != null;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         @Override
         public Entry<T, S> next() {
-            load();
-            if (next == null) {
-                throw new NoSuchElementException();
-            } else {
-                Entry<T, S> v = next;
-                next = null;
-                return v;
-            }
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         private void load() {
@@ -123,7 +115,5 @@ final class Search {
                 previous.setPosition(previous.position() + 1);
             }
         }
-
     }
-
 }

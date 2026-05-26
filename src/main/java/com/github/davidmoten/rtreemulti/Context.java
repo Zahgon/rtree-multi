@@ -11,15 +11,20 @@ import com.github.davidmoten.rtreemulti.geometry.Geometry;
 public final class Context<T, S extends Geometry> {
 
     private final int dimensions;
+
     private final int maxChildren;
+
     private final int minChildren;
+
     private final Splitter splitter;
+
     private final Selector selector;
+
     private final Factory<T, S> factory;
 
     /**
      * Constructor.
-     * 
+     *
      * @param minChildren
      *            minimum number of children per node (at least 1)
      * @param maxChildren
@@ -31,8 +36,7 @@ public final class Context<T, S extends Geometry> {
      * @param factory
      *            node creation factory
      */
-    public Context(int dimensions, int minChildren, int maxChildren, Selector selector, Splitter splitter,
-            Factory<T, S> factory) {
+    public Context(int dimensions, int minChildren, int maxChildren, Selector selector, Splitter splitter, Factory<T, S> factory) {
         Preconditions.checkNotNull(splitter);
         Preconditions.checkNotNull(selector);
         Preconditions.checkArgument(maxChildren > 2, "maxChildren must be greater than 2");
@@ -49,27 +53,26 @@ public final class Context<T, S extends Geometry> {
     }
 
     public int maxChildren() {
-        return maxChildren;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int minChildren() {
-        return minChildren;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Splitter splitter() {
-        return splitter;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Selector selector() {
-        return selector;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Factory<T, S> factory() {
-        return factory;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int dimensions() {
-        return dimensions;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

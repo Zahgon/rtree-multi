@@ -1,12 +1,12 @@
 package com.github.davidmoten.rtreemulti.geometry;
 
 import java.util.List;
-
 import com.github.davidmoten.rtreemulti.internal.Util;
 
 public class Group<T extends HasGeometry> implements HasGeometry {
 
     private final List<T> list;
+
     private final Rectangle mbr;
 
     public Group(List<T> list) {
@@ -15,12 +15,11 @@ public class Group<T extends HasGeometry> implements HasGeometry {
     }
 
     public List<T> list() {
-        return list;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Geometry geometry() {
-        return mbr;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

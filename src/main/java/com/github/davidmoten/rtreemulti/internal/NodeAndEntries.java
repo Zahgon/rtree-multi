@@ -2,14 +2,13 @@ package com.github.davidmoten.rtreemulti.internal;
 
 import java.util.List;
 import java.util.Optional;
-
 import com.github.davidmoten.rtreemulti.Entry;
 import com.github.davidmoten.rtreemulti.Node;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 
 /**
  * Used for tracking deletions through recursive calls.
- * 
+ *
  * @param <T>
  *            value type
  * @param <S> geometry type
@@ -17,12 +16,14 @@ import com.github.davidmoten.rtreemulti.geometry.Geometry;
 public final class NodeAndEntries<T, S extends Geometry> {
 
     private final Optional<? extends Node<T, S>> node;
+
     private final List<Entry<T, S>> entries;
+
     private final int count;
 
     /**
      * Constructor.
-     * 
+     *
      * @param node
      *            absent = whole node was deleted present = either an unchanged
      *            node because of no removal or the newly created node without
@@ -33,23 +34,21 @@ public final class NodeAndEntries<T, S extends Geometry> {
      * @param countDeleted
      *            count of the number of entries removed
      */
-    public NodeAndEntries(Optional<? extends Node<T, S>> node, List<Entry<T, S>> entries,
-            int countDeleted) {
+    public NodeAndEntries(Optional<? extends Node<T, S>> node, List<Entry<T, S>> entries, int countDeleted) {
         this.node = node;
         this.entries = entries;
         this.count = countDeleted;
     }
 
     public Optional<? extends Node<T, S>> node() {
-        return node;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<Entry<T, S>> entriesToAdd() {
-        return entries;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public int countDeleted() {
-        return count;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

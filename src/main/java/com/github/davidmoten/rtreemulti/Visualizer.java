@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-
 import com.github.davidmoten.guavamini.Preconditions;
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import com.github.davidmoten.rtreemulti.geometry.Rectangle;
@@ -19,9 +18,13 @@ import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 public final class Visualizer {
 
     private final RTree<?, Geometry> tree;
+
     private final int width;
+
     private final int height;
+
     private final Rectangle view;
+
     private final int maxDepth;
 
     Visualizer(RTree<?, Geometry> tree, int width, int height, Rectangle view) {
@@ -33,8 +36,7 @@ public final class Visualizer {
         this.maxDepth = calculateMaxDepth(tree.root());
     }
 
-    private static <R, S extends Geometry> int calculateMaxDepth(
-            Optional<? extends Node<R, S>> root) {
+    private static <R, S extends Geometry> int calculateMaxDepth(Optional<? extends Node<R, S>> root) {
         if (!root.isPresent())
             return 0;
         else
@@ -49,34 +51,22 @@ public final class Visualizer {
     }
 
     public BufferedImage createImage() {
-        final BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        final Graphics2D g = (Graphics2D) image.getGraphics();
-        g.setBackground(Color.white);
-        g.clearRect(0, 0, width, height);
-        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.75f));
-
-        if (tree.root().isPresent()) {
-            final List<RectangleDepth> nodeDepths = getNodeDepthsSortedByDepth(tree.root().get());
-            drawNode(g, nodeDepths);
-        }
-        return image;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    private <T, S extends Geometry> List<RectangleDepth> getNodeDepthsSortedByDepth(
-            Node<T, S> root) {
+    private <T, S extends Geometry> List<RectangleDepth> getNodeDepthsSortedByDepth(Node<T, S> root) {
         final List<RectangleDepth> list = getRectangleDepths(root, 0);
         Collections.sort(list, new Comparator<RectangleDepth>() {
 
             @Override
             public int compare(RectangleDepth n1, RectangleDepth n2) {
-                return ((Integer) n1.getDepth()).compareTo(n2.getDepth());
+                throw new UnsupportedOperationException("STUB: not implemented");
             }
         });
         return list;
     }
 
-    private <T, S extends Geometry> List<RectangleDepth> getRectangleDepths(Node<T, S> node,
-            int depth) {
+    private <T, S extends Geometry> List<RectangleDepth> getRectangleDepths(Node<T, S> node, int depth) {
         final List<RectangleDepth> list = new ArrayList<RectangleDepth>();
         list.add(new RectangleDepth(node.geometry().mbr(), depth));
         if (node.isLeaf()) {
@@ -117,14 +107,14 @@ public final class Visualizer {
     }
 
     public void save(File file, String imageFormat) {
-        ImageSaver.save(createImage(), file, imageFormat);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void save(String filename, String imageFormat) {
-        save(new File(filename), imageFormat);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void save(String filename) {
-        save(new File(filename), "PNG");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

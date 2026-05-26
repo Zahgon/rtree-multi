@@ -3,14 +3,12 @@ package com.github.davidmoten.rtreemulti.internal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import com.github.davidmoten.guavamini.Preconditions;
 import com.github.davidmoten.rtreemulti.geometry.HasGeometry;
 import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 
 /**
  * @author dxm
- *
  */
 public final class Util {
 
@@ -22,7 +20,7 @@ public final class Util {
      * Returns the minimum bounding rectangle of a number of items. Benchmarks below
      * indicate that when the number of items is &gt;1 this method is more
      * performant than one using {@link Rectangle#add(Rectangle)}.
-     * 
+     *
      * <pre>
      * Benchmark                             Mode  Samples         Score  Score error  Units
      * c.g.d.r.BenchmarksMbr.mbrList1       thrpt       10  48450492.301   436127.960  ops/s
@@ -34,46 +32,24 @@ public final class Util {
      * c.g.d.r.BenchmarksMbr.mbrOldList3    thrpt       10  19222116.139   246965.178  ops/s
      * c.g.d.r.BenchmarksMbr.mbrOldList4    thrpt       10  14891862.638   198765.157  ops/s
      * </pre>
-     * 
+     *
      * @param items
      *            items to bound
      * @return the minimum bounding rectangle containings items
      */
     public static Rectangle mbr(Collection<? extends HasGeometry> items) {
-        Preconditions.checkArgument(!items.isEmpty());
-        Rectangle result = null;
-        for (final HasGeometry item : items) {
-            Rectangle r = item.geometry().mbr();
-            if (result == null) {
-                result = r;
-            } else {
-                result = result.add(r);
-            }
-        }
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> List<T> add(List<T> list, T element) {
-        final ArrayList<T> result = new ArrayList<T>(list.size() + 2);
-        result.addAll(list);
-        result.add(element);
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static <T> List<T> remove(List<? extends T> list, List<? extends T> elements) {
-        final ArrayList<T> result = new ArrayList<T>(list);
-        result.removeAll(elements);
-        return result;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
-    public static <T> List<? extends T> replace(List<? extends T> list, T element,
-            List<T> replacements) {
-        List<T> list2 = new ArrayList<T>(list.size() + replacements.size());
-        for (T node : list)
-            if (node != element)
-                list2.add(node);
-        list2.addAll(replacements);
-        return list2;
+    public static <T> List<? extends T> replace(List<? extends T> list, T element, List<T> replacements) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

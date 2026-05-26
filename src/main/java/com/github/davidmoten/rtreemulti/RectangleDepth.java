@@ -3,7 +3,9 @@ package com.github.davidmoten.rtreemulti;
 import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 
 final class RectangleDepth {
+
     private final Rectangle rectangle;
+
     private final int depth;
 
     RectangleDepth(Rectangle rectangle, int depth) {
@@ -13,11 +15,10 @@ final class RectangleDepth {
     }
 
     Rectangle getRectangle() {
-        return rectangle;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     int getDepth() {
-        return depth;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

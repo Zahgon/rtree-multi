@@ -1,7 +1,6 @@
 package com.github.davidmoten.rtreemulti.geometry.internal;
 
 import java.util.Arrays;
-
 import com.github.davidmoten.rtreemulti.geometry.Geometry;
 import com.github.davidmoten.rtreemulti.geometry.Point;
 import com.github.davidmoten.rtreemulti.geometry.Rectangle;
@@ -14,84 +13,77 @@ public final class PointDouble implements Point {
         this.x = x;
     }
 
-    public static PointDouble create(double x[]) {
-        return new PointDouble(x);
+    public static PointDouble create(double[] x) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Rectangle mbr() {
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public double distance(Rectangle r) {
-        return GeometryUtil.distance(x, r);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean intersects(Rectangle r) {
-        return GeometryUtil.intersects(x, x, r.mins(), r.maxes());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public double[] mins() {
-        return x;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return "Point " + Arrays.toString(mins());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Geometry geometry() {
-        return this;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public double volume() {
-        return 0;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Rectangle add(Rectangle r) {
-        return Rectangle.create(GeometryUtil.min(x, r.mins()), GeometryUtil.max(x, r.maxes()));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean contains(double... p) {
-        return Arrays.equals(x, p);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public double intersectionVolume(Rectangle r) {
-        return 0;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public double surfaceArea() {
-        return 0;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(x);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (obj.getClass() != getClass())
-            return false;
-        return Arrays.equals(x, ((PointDouble) obj).x);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int dimensions() {
-        return x.length;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

@@ -7,6 +7,7 @@ import com.github.davidmoten.rtreemulti.geometry.Geometry;
 final class NodePosition<T, S extends Geometry> {
 
     private Node<T, S> node;
+
     private int position;
 
     NodePosition(Node<T, S> node, int position) {
@@ -16,29 +17,23 @@ final class NodePosition<T, S extends Geometry> {
     }
 
     Node<T, S> node() {
-        return node;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     int position() {
-        return position;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     boolean hasRemaining() {
-        return position != node.count();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     void setPosition(int position) {
-        this.position = position;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        String builder = "NodePosition [node=" +
-                node +
-                ", position=" +
-                position +
-                "]";
-        return builder;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

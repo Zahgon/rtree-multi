@@ -5,13 +5,15 @@ import java.util.PriorityQueue;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
 import com.github.davidmoten.guavamini.Preconditions;
 
 public final class BoundedPriorityQueue<T> {
 
-    private final PriorityQueue<T> queue; /* backing data structure */
+    private final PriorityQueue<T> queue;
+
+    /* backing data structure */
     private final Comparator<? super T> comparator;
+
     private final int maxSize;
 
     /**
@@ -38,14 +40,13 @@ public final class BoundedPriorityQueue<T> {
 
             @Override
             public int compare(T o1, T o2) {
-                return comparator.compare(o2, o1);
+                throw new UnsupportedOperationException("STUB: not implemented");
             }
         };
     }
 
-    public static <T> BoundedPriorityQueue<T> create(final int maxSize,
-            final Comparator<? super T> comparator) {
-        return new BoundedPriorityQueue<T>(maxSize, comparator);
+    public static <T> BoundedPriorityQueue<T> create(final int maxSize, final Comparator<? super T> comparator) {
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -60,18 +61,7 @@ public final class BoundedPriorityQueue<T> {
      *            - Element to be added, must be non-null.
      */
     public void add(final T t) {
-        if (t == null) {
-            throw new NullPointerException("cannot add null to the queue");
-        }
-        if (queue.size() >= maxSize) {
-            final T maxElement = queue.peek();
-            if (comparator.compare(maxElement, t) < 1) {
-                return;
-            } else {
-                queue.poll();
-            }
-        }
-        queue.add(t);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -80,13 +70,10 @@ public final class BoundedPriorityQueue<T> {
      *         unmodifiableList sorted in reverse order.
      */
     public List<T> asList() {
-        return Collections.unmodifiableList(new ArrayList<T>(queue));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public List<T> asOrderedList() {
-        List<T> list = new ArrayList<T>(queue);
-        Collections.sort(list, comparator);
-        return list;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

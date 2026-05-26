@@ -3,18 +3,21 @@ package com.github.davidmoten.rtreemulti.geometry;
 import java.util.List;
 
 /**
- *
  * Not thread safe.
  *
  * @param <T>
  *            list type
  */
 public final class ListPair<T extends HasGeometry> {
+
     private final Group<T> group1;
+
     private final Group<T> group2;
+
     // these non-final variable mean that this class is not thread-safe
     // because access to them is not synchronized
     private double volumeSum = -1;
+
     private final double marginSum;
 
     public ListPair(List<T> list1, List<T> list2) {
@@ -24,22 +27,18 @@ public final class ListPair<T extends HasGeometry> {
     }
 
     public Group<T> group1() {
-        return group1;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Group<T> group2() {
-        return group2;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public double volumeSum() {
-        if (volumeSum == -1) {
-            volumeSum = group1.geometry().mbr().volume() + group2.geometry().mbr().volume();
-        }
-        return volumeSum;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public double marginSum() {
-        return marginSum;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

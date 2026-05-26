@@ -10,17 +10,11 @@ public final class ObjectsHelper {
 
     @VisibleForTesting
     static void instantiateForTestCoveragePurposesOnly() {
-        new ObjectsHelper();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @SuppressWarnings("unchecked")
     public static <T> T asClass(Object object, Class<T> cls) {
-        if (object == null)
-            return null;
-        else if (object.getClass() != cls)
-            return null;
-        else
-            return (T) object;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

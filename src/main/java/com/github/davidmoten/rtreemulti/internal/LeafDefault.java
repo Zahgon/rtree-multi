@@ -1,7 +1,6 @@
 package com.github.davidmoten.rtreemulti.internal;
 
 import java.util.List;
-
 import com.github.davidmoten.rtreemulti.Context;
 import com.github.davidmoten.rtreemulti.Entry;
 import com.github.davidmoten.rtreemulti.Leaf;
@@ -12,7 +11,9 @@ import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 public final class LeafDefault<T, S extends Geometry> implements Leaf<T, S> {
 
     private final List<Entry<T, S>> entries;
+
     private final Rectangle mbr;
+
     private final Context<T, S> context;
 
     public LeafDefault(List<Entry<T, S>> entries, Context<T, S> context) {
@@ -23,42 +24,41 @@ public final class LeafDefault<T, S extends Geometry> implements Leaf<T, S> {
 
     @Override
     public Geometry geometry() {
-        return mbr;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public List<Entry<T, S>> entries() {
-        return entries;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int count() {
-        return entries.size();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public List<Node<T, S>> add(Entry<? extends T, ? extends S> entry) {
-        return LeafHelper.add(entry, this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public NodeAndEntries<T, S> delete(Entry<? extends T, ? extends S> entry, boolean all) {
-        return LeafHelper.delete(entry, all, this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Context<T, S> context() {
-        return context;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Entry<T, S> entry(int i) {
-        return entries.get(i);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return "LeafDefault [mbr=" + mbr + ", entries=" + entries + "]";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

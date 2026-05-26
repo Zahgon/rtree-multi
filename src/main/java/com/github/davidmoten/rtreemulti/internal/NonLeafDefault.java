@@ -1,7 +1,6 @@
 package com.github.davidmoten.rtreemulti.internal;
 
 import java.util.List;
-
 import com.github.davidmoten.guavamini.Preconditions;
 import com.github.davidmoten.rtreemulti.Context;
 import com.github.davidmoten.rtreemulti.Entry;
@@ -13,7 +12,9 @@ import com.github.davidmoten.rtreemulti.geometry.Rectangle;
 public final class NonLeafDefault<T, S extends Geometry> implements NonLeaf<T, S> {
 
     private final List<? extends Node<T, S>> children;
+
     private final Rectangle mbr;
+
     private final Context<T, S> context;
 
     public NonLeafDefault(List<? extends Node<T, S>> children, Context<T, S> context) {
@@ -25,43 +26,42 @@ public final class NonLeafDefault<T, S extends Geometry> implements NonLeaf<T, S
 
     @Override
     public Geometry geometry() {
-        return mbr;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public int count() {
-        return children.size();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public List<Node<T, S>> add(Entry<? extends T, ? extends S> entry) {
-        return NonLeafHelper.add(entry, this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public NodeAndEntries<T, S> delete(Entry<? extends T, ? extends S> entry, boolean all) {
-        return NonLeafHelper.delete(entry, all, this);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Context<T, S> context() {
-        return context;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public Node<T, S> child(int i) {
-        return children.get(i);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<Node<T, S>> children() {
-        return (List<Node<T, S>>) children;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public String toString() {
-        return "NonLeafDefault [mbr=" + mbr + ", children=" + children + "]";
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
 }

@@ -3,6 +3,7 @@ package com.github.davidmoten.rtreemulti.internal.util;
 public final class Pair<T> {
 
     private final T value1;
+
     private final T value2;
 
     public Pair(T value1, T value2) {
@@ -11,11 +12,10 @@ public final class Pair<T> {
     }
 
     public T value1() {
-        return value1;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public T value2() {
-        return value2;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

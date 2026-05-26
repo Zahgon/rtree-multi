@@ -13,12 +13,13 @@ public final class Iterables {
     }
 
     public static <T> Iterable<T> filter(Iterable<? extends T> iterable, Predicate<? super T> condition) {
-        return new FilterIterable<T>(iterable, condition);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     static final class FilterIterable<T> implements Iterable<T> {
 
         private final Iterable<? extends T> iterable;
+
         private final Predicate<? super T> condition;
 
         FilterIterable(Iterable<? extends T> iterable, Predicate<? super T> condition) {
@@ -28,15 +29,16 @@ public final class Iterables {
 
         @Override
         public Iterator<T> iterator() {
-            return new FilterIterator<T>(iterable.iterator(), condition);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
-
     }
 
     static final class FilterIterator<T> implements Iterator<T> {
 
         private Iterator<? extends T> it;
+
         private final Predicate<? super T> condition;
+
         private T next;
 
         FilterIterator(Iterator<? extends T> it, Predicate<? super T> condition) {
@@ -46,20 +48,12 @@ public final class Iterables {
 
         @Override
         public boolean hasNext() {
-            load();
-            return next != null;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         @Override
         public T next() {
-            load();
-            if (next == null) {
-                throw new NoSuchElementException();
-            } else {
-                T v = next;
-                next = null;
-                return v;
-            }
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         private void load() {
@@ -74,29 +68,17 @@ public final class Iterables {
                 it = null;
             }
         }
+    }
 
-    }
-    
     public static long size(Iterable<?> iterable) {
-        Iterator<?> it = iterable.iterator();
-        long count = 0;
-        while (it.hasNext()) {
-            it.next();
-            count++;
-        }
-        return count;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
+
     public static <T> List<T> toList(Iterable<T> iterable) {
-        List<T> list = new ArrayList<T>();
-        for (T item : iterable) {
-            list.add(item);
-        }
-        return list;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static boolean isEmpty(Iterable<?> entries) {
-        return !entries.iterator().hasNext();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-    
 }
